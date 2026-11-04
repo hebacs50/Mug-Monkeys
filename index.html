@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="description" content="Digital menu for Mug Monkeys specialty coffee: hot coffee, cold brews, teas, mocktails, pastries and snacks.">
+  <meta name="theme-color" content="#F2E1C6">
+  <title>Mug Monkeys Menu</title>
+
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Poppins:wght@400;500;600;700&family=Cairo:wght@700&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="is-loading">
+
+  <!-- ============ PRELOADER ============ -->
+  <div class="preloader" id="preloader" role="dialog" aria-modal="true" aria-labelledby="preBrand">
+    <div class="pre">
+      <div class="pre__hero">
+        <button class="pre__monkey" id="preMonkey" type="button" aria-label="Say hi to the monkey">
+          <svg class="pre__svg" viewBox="0 0 240 260" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+            <defs>
+              <radialGradient id="mmFur" cx="0.34" cy="0.28" r="0.9">
+                <stop offset="0" stop-color="#C98F60"/>
+                <stop offset="0.45" stop-color="#8C5532"/>
+                <stop offset="1" stop-color="#47260F"/>
+              </radialGradient>
+              <radialGradient id="mmCream" cx="0.4" cy="0.28" r="0.95">
+                <stop offset="0" stop-color="#FFF4E0"/>
+                <stop offset="0.6" stop-color="#F0D9B4"/>
+                <stop offset="1" stop-color="#D3B084"/>
+              </radialGradient>
+              <radialGradient id="mmEye" cx="0.35" cy="0.3" r="0.8">
+                <stop offset="0" stop-color="#5C4636"/>
+                <stop offset="1" stop-color="#150B06"/>
+              </radialGradient>
+              <radialGradient id="mmTongue" cx="0.4" cy="0.25" r="0.95">
+                <stop offset="0" stop-color="#FF9F9A"/>
+                <stop offset="0.6" stop-color="#DE5A52"/>
+                <stop offset="1" stop-color="#AD3A36"/>
+              </radialGradient>
+              <linearGradient id="mmHalo" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#F6D98A"/>
+                <stop offset="1" stop-color="#C99128"/>
+              </linearGradient>
+              <linearGradient id="mmMug" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#6B4128"/>
+                <stop offset="1" stop-color="#2A1710"/>
+              </linearGradient>
+            </defs>
+
+            <!-- halo -->
+            <ellipse cx="120" cy="34" rx="30" ry="8" fill="none" stroke="url(#mmHalo)" stroke-width="6"/>
+
+            <!-- ears -->
+            <circle cx="62" cy="104" r="22" fill="url(#mmFur)"/>
+            <circle cx="62" cy="104" r="12" fill="url(#mmCream)"/>
+            <circle cx="178" cy="104" r="22" fill="url(#mmFur)"/>
+            <circle cx="178" cy="104" r="12" fill="url(#mmCream)"/>
+
+            <!-- head -->
+            <circle cx="120" cy="110" r="60" fill="url(#mmFur)"/>
+            <ellipse cx="96" cy="70" rx="20" ry="8" fill="#fff" opacity="0.22" transform="rotate(-22 96 70)"/>
+
+            <!-- face -->
+            <circle cx="100" cy="112" r="24" fill="url(#mmCream)"/>
+            <circle cx="140" cy="112" r="24" fill="url(#mmCream)"/>
+            <ellipse cx="120" cy="128" rx="38" ry="28" fill="url(#mmCream)"/>
+
+            <!-- open eye with highlight -->
+            <ellipse cx="101" cy="108" rx="8" ry="9" fill="url(#mmEye)"/>
+            <circle cx="98.4" cy="104.6" r="2.6" fill="#fff"/>
+            <!-- winking eye -->
+            <path d="M130 110 Q140 100 150 110" fill="none" stroke="#2A1710" stroke-width="4" stroke-linecap="round"/>
+
+            <ellipse cx="120" cy="122" rx="6.5" ry="4.8" fill="#2A1710"/>
+            <path d="M98 134 Q120 150 142 134" fill="none" stroke="#2A1710" stroke-width="3.6" stroke-linecap="round"/>
+            <path d="M112 140 C112 156 128 156 128 140 Z" fill="url(#mmTongue)"/>
+
+            <!-- mug: the head sits inside it -->
+            <path d="M74 162 H166 L158 236 Q156 250 142 250 H98 Q84 250 82 236 Z" fill="url(#mmMug)"/>
+            <rect x="84" y="196" width="72" height="11" rx="3" fill="url(#mmCream)" opacity="0.9"/>
+            <path d="M90 176 L93 224" stroke="#fff" stroke-opacity="0.18" stroke-width="5" stroke-linecap="round"/>
+            <path d="M164 178 C198 172 204 218 160 224" fill="none" stroke="#2A1710" stroke-width="12" stroke-linecap="round"/>
+            <ellipse cx="120" cy="162" rx="46" ry="6" fill="#5C3A24"/>
+
+            <!-- waving arm, rotates from the shoulder -->
+            <g class="pre__arm">
+              <path d="M84 206 C52 204 36 176 30 146" fill="none" stroke="#6B3E1F" stroke-width="13" stroke-linecap="round"/>
+              <circle cx="28" cy="134" r="12" fill="url(#mmFur)"/>
+              <circle cx="20" cy="118" r="4.5" fill="url(#mmFur)"/>
+              <circle cx="28" cy="114" r="4.5" fill="url(#mmFur)"/>
+              <circle cx="36" cy="118" r="4.5" fill="url(#mmFur)"/>
+            </g>
+          </svg>
+        </button>
+
+        <div class="pre__bubble" id="preBubble" aria-live="polite">
+          <div class="pre__bubble-in">
+            <span class="pre__hi" id="preHi">Hi</span>
+            <span class="pre__hi-ar" id="preHiAr" lang="ar" dir="rtl">مرحباً</span>
+          </div>
+        </div>
+      </div>
+
+      <p class="pre__brand" id="preBrand">Mug <span>Monkeys</span></p>
+      <p class="pre__tag">Sip. Smile. Repeat.</p>
+
+      <button class="pre__cta" id="exploreBtn" type="button">Explore Menu</button>
+    </div>
+  </div>
+
+  <a class="skip-link" href="#menu">Skip to menu</a>
+
+  <!-- ============ HERO ============ -->
+  <header class="hero" id="top">
+    <div class="hero__bg" aria-hidden="true">
+      <img src="images/cafe-interior.jpg" width="536" height="602" alt="" decoding="async">
+    </div>
+
+    <div class="hero__inner">
+      <p class="hero__badge">Specialty coffee &middot; Prices in EGP</p>
+
+      <div class="hero__medal">
+        <img class="hero__mascot" src="images/mascot-logo.png" width="603" height="517"
+             alt="Mug Monkeys mascot: a winking monkey inside a coffee mug with a halo, tongue out, giving a thumbs-up">
+      </div>
+
+      <h1 class="hero__title"><span class="hero__mug">Mug</span> <span class="hero__monkeys">Monkeys</span></h1>
+      <p class="hero__tagline">Sip. Smile. Repeat.</p>
+
+      <p class="hero__lead">Good coffee. Better mood.</p>
+      <p class="hero__copy">Coffee first, jungle next. Grab a seat, pick your cup and tap any item for a closer look.</p>
+
+      <div class="hero__actions">
+        <a class="btn btn--primary" href="#menu">View the menu</a>
+        <a class="btn btn--ghost" href="#space"><span lang="en">Our space</span> <span lang="ar" dir="rtl">مساحتنا</span></a>
+      </div>
+
+      <ul class="hero__stats" aria-label="At a glance">
+        <li><b>33</b><span>Menu items</span></li>
+        <li><b>5</b><span>Categories</span></li>
+        <li><b>Daily</b><span>Pastries baked fresh</span></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- ============ OUR SPACE ============ -->
+  <section class="space" id="space" aria-labelledby="space-title">
+    <div class="space__head">
+      <p class="space__eyebrow"><span lang="en">Our Space</span> <span class="sep">·</span> <span lang="ar" dir="rtl">مساحتنا</span></p>
+      <h2 class="space__title" id="space-title">
+        <span lang="en">Come sit with us</span>
+        <span lang="ar" dir="rtl">تعالوا اقعدوا معانا</span>
+      </h2>
+    </div>
+
+    <div class="slider" id="deck" role="region" aria-roledescription="carousel" aria-label="Photos of the cafe · صور الكافيه">
+      <div class="slider__track" id="track">
+      <figure class="slide" aria-roledescription="slide" aria-label="1 of 8">
+        <div class="slide__bg" aria-hidden="true"><img src="images/space/storefront.jpg" alt="" decoding="async"></div>
+        <img class="slide__photo" src="images/space/storefront.jpg" alt="Mug Monkeys storefront with the monkey sign and green wall" width="486" height="800" decoding="async">
+        <figcaption class="slide__cap">
+          <span class="cap-en" lang="en">Find us on the street</span>
+          <span class="cap-ar" lang="ar" dir="rtl">شوفونا في الشارع</span>
+        </figcaption>
+      </figure>
+      <figure class="slide" aria-roledescription="slide" aria-label="2 of 8">
+        <div class="slide__bg" aria-hidden="true"><img src="images/space/green-wall.jpg" alt="" decoding="async"></div>
+        <img class="slide__photo" src="images/space/green-wall.jpg" alt="Seating under a green wall with pendant lights" width="486" height="800" decoding="async">
+        <figcaption class="slide__cap">
+          <span class="cap-en" lang="en">Green corners, cozy seats</span>
+          <span class="cap-ar" lang="ar" dir="rtl">ركن أخضر ومقاعد مريحة</span>
+        </figcaption>
+      </figure>
+      <figure class="slide" aria-roledescription="slide" aria-label="3 of 8">
+        <div class="slide__bg" aria-hidden="true"><img src="images/space/mural-sofa.jpg" alt="" decoding="async"></div>
+        <img class="slide__photo" src="images/space/mural-sofa.jpg" alt="Monkey mural above a cream sofa and wooden tables" width="486" height="800" decoding="async">
+        <figcaption class="slide__cap">
+          <span class="cap-en" lang="en">Coffee first, jungle next</span>
+          <span class="cap-ar" lang="ar" dir="rtl">القهوة الأول، والجنجل بعدين</span>
+        </figcaption>
+      </figure>
+      <figure class="slide" aria-roledescription="slide" aria-label="4 of 8">
+        <div class="slide__bg" aria-hidden="true"><img src="images/space/mural-tables.jpg" alt="" decoding="async"></div>
+        <img class="slide__photo" src="images/space/mural-tables.jpg" alt="Wooden tables and armchairs in front of the Mug Monkeys mural" width="486" height="800" decoding="async">
+        <figcaption class="slide__cap">
+          <span class="cap-en" lang="en">Sit back, stay a while</span>
+          <span class="cap-ar" lang="ar" dir="rtl">اقعد مرتاح وخد وقتك</span>
+        </figcaption>
+      </figure>
+      <figure class="slide" aria-roledescription="slide" aria-label="5 of 8">
+        <div class="slide__bg" aria-hidden="true"><img src="images/cafe-interior.jpg" alt="" decoding="async"></div>
+        <img class="slide__photo" src="images/cafe-interior.jpg" alt="Mug Monkeys seating area with the monkey mural, leaf paintings and wooden tables" width="486" height="800" decoding="async">
+        <figcaption class="slide__cap">
+          <span class="cap-en" lang="en">Cozy seating by the mural</span>
+          <span class="cap-ar" lang="ar" dir="rtl">مقاعد جنب المورال</span>
+        </figcaption>
+      </figure>
+      <figure class="slide" aria-roledescription="slide" aria-label="6 of 8">
+        <div class="slide__bg" aria-hidden="true"><img src="images/space/quiet-corner.jpg" alt="" decoding="async"></div>
+        <img class="slide__photo" src="images/space/quiet-corner.jpg" alt="Two cushioned chairs and a small wooden table in a quiet corner" width="486" height="800" decoding="async">
+        <figcaption class="slide__cap">
+          <span class="cap-en" lang="en">A quiet corner for two</span>
+          <span class="cap-ar" lang="ar" dir="rtl">ركن هادي لاتنين</span>
+        </figcaption>
+      </figure>
+      <figure class="slide" aria-roledescription="slide" aria-label="7 of 8">
+        <div class="slide__bg" aria-hidden="true"><img src="images/space/drinks.jpg" alt="" decoding="async"></div>
+        <img class="slide__photo" src="images/space/drinks.jpg" alt="Iced drinks and a pastry on a red tray" width="486" height="800" decoding="async">
+        <figcaption class="slide__cap">
+          <span class="cap-en" lang="en">Coffee and something sweet</span>
+          <span class="cap-ar" lang="ar" dir="rtl">قهوة ومعاها حاجة حلوة</span>
+        </figcaption>
+      </figure>
+      <figure class="slide" aria-roledescription="slide" aria-label="8 of 8">
+        <div class="slide__bg" aria-hidden="true"><img src="images/cafe-cheesecake.jpg" alt="" decoding="async"></div>
+        <img class="slide__photo" src="images/cafe-cheesecake.jpg" alt="A slice of matcha cheesecake on a wooden table" width="486" height="800" decoding="async">
+        <figcaption class="slide__cap">
+          <span class="cap-en" lang="en">Matcha cheesecake</span>
+          <span class="cap-ar" lang="ar" dir="rtl">تشيز كيك ماتشا</span>
+        </figcaption>
+      </figure>
+      </div>
+      <div class="slider__dots" id="deckDots">
+        <button class="dot" type="button" data-go="0" aria-label="Photo 1 · صورة 1"></button>
+        <button class="dot" type="button" data-go="1" aria-label="Photo 2 · صورة 2"></button>
+        <button class="dot" type="button" data-go="2" aria-label="Photo 3 · صورة 3"></button>
+        <button class="dot" type="button" data-go="3" aria-label="Photo 4 · صورة 4"></button>
+        <button class="dot" type="button" data-go="4" aria-label="Photo 5 · صورة 5"></button>
+        <button class="dot" type="button" data-go="5" aria-label="Photo 6 · صورة 6"></button>
+        <button class="dot" type="button" data-go="6" aria-label="Photo 7 · صورة 7"></button>
+        <button class="dot" type="button" data-go="7" aria-label="Photo 8 · صورة 8"></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ MENU ============ -->
+  <section class="m-section" id="menu" aria-labelledby="menu-title">
+    <div class="m-container">
+      <div class="m-head">
+        <span class="m-eyebrow"><span lang="en">Our Menu</span> <span class="sep">·</span> <span lang="ar" dir="rtl">المنيو</span></span>
+        <h2 id="menu-title"><span lang="en">Pick Your Craving</span> <span class="m-title-ar" lang="ar" dir="rtl">اختار اللي نفسك فيه</span></h2>
+        <p><span lang="en">Browse by category or search, and tap any item for a closer look.</span> <span lang="ar" dir="rtl">تصفح حسب القسم أو ابحث، واضغط على أي صنف عشان تشوف التفاصيل.</span></p>
+      </div>
+
+      <div class="m-tabs" id="tabs" role="tablist" aria-label="Menu categories · أقسام المنيو">
+      <button class="m-tab active" type="button" role="tab" data-tab="hot" aria-selected="true"><span class="tab-icon">☕</span> <span class="tab-en">Hot Coffee</span> <span class="tab-ar" lang="ar" dir="rtl">قهوة ساخنة</span></button>
+      <button class="m-tab" type="button" role="tab" data-tab="cold" aria-selected="false"><span class="tab-icon">🧊</span> <span class="tab-en">Cold & Iced</span> <span class="tab-ar" lang="ar" dir="rtl">مثلجات وقهوة مثلجة</span></button>
+      <button class="m-tab" type="button" role="tab" data-tab="tea" aria-selected="false"><span class="tab-icon">🍹</span> <span class="tab-en">Teas & Mocktails</span> <span class="tab-ar" lang="ar" dir="rtl">شاي وموكتيلز</span></button>
+      <button class="m-tab" type="button" role="tab" data-tab="sweet" aria-selected="false"><span class="tab-icon">🥐</span> <span class="tab-en">Pastries & Desserts</span> <span class="tab-ar" lang="ar" dir="rtl">حلويات ومعجنات</span></button>
+      <button class="m-tab" type="button" role="tab" data-tab="bites" aria-selected="false"><span class="tab-icon">🥪</span> <span class="tab-en">Breakfast & Snacks</span> <span class="tab-ar" lang="ar" dir="rtl">فطار وسناكس</span></button>
+      </div>
+
+      <div class="m-search">
+        <input id="q" type="search" autocomplete="off" placeholder="Search the menu · ابحث في المنيو" aria-label="Search the menu · ابحث في المنيو">
+      </div>
+
+      <div class="m-grid" id="menuGrid">
+    <article class="card" tabindex="0" data-cat="hot" data-name="cone latte كونه لاتيه" data-title="Cone Latte" data-title-ar="كونه لاتيه" data-ingredients="Espresso::إسبريسو|Steamed milk::لبن مبخر|Dark chocolate lining::بطانة شوكولاتة داكنة|Waffle cone::كوب وافل">
+      <div class="card-body">
+        <h3><span class="name-en">Cone Latte</span><span class="tag"><span lang="en">Signature</span> <span lang="ar" dir="rtl">مميز</span></span></h3>
+        <p class="name-ar" lang="ar" dir="rtl">كونه لاتيه</p>
+        <p class="desc desc-en">Espresso and silky steamed milk poured into a chocolate-lined waffle cone. Drink it before it drips.</p>
+        <p class="desc desc-ar" lang="ar" dir="rtl">إسبريسو ولبن مبخر ناعم في كوب وافل مبطن بالشيكولاتة. اشربه قبل ما يقطّر.</p>
+        <div class="card-foot"><span class="price">110 <small>EGP · ج.م</small></span><span class="more"><span lang="en">View</span> · <span lang="ar" dir="rtl">عرض</span></span></div>
+      </div>
+    </article>
+    <article class="card" tabindex="0" data-cat="hot" data-name="espresso إسبريسو" data-title="Espresso" data-title-ar="إسبريسو" data-ingredients="Espresso (single or double shot)::إسبريسو (شوت واحد أو اتنين)">
+      <div class="card-body">
+        <h3><span class="name-en">Espresso</span></h3>
+        <p class="name-ar" lang="ar" dir="rtl">إسبريسو</p>
+        <p class="desc desc-en">Single or double shot, rich crema.</p>
+        <p class="desc desc-ar" lang="ar" dir="rtl">شوت واحد أو اتنين، كريما غنية.</p>
+      <div class="sizes"><button class="size sel" type="button" data-value="45"><span lang="en">Single</span> <span lang="ar" dir="rtl">سينجل</span> · 45</button><button class="size" type="button" data-value="60"><span lang="en">Double</span> <span lang="ar" dir="rtl">دابل</span> · 60</button></div>
+        <div class="card-foot"><span class="price">45 <small>EGP · ج.م</small></span><span class="more"><span lang="en">View</span> · <span lang="ar" dir="rtl">عرض</span></span></div>
+      </div>
+    </article>
+    <article class="card" tabindex="0" data-cat="hot" data-name="americano أمريكانو" data-title="Americano" data-title-ar="أمريكانو" data-ingredients="Espresso::إسبريسو|Hot water::مية سخنة">
+      <div class="card-body">
+        <h3><span class="name-en">Americano</span></h3>
+        <p class="name-ar" lang="ar" dir="rtl">أمريكانو</p>
+        <p class="desc desc-en">Espresso stretched with hot water.</p>
+        <p class="desc desc-ar" lang="ar" dir="rtl">إسبريسو مخفف بمية سخنة.</p>
+        <div class="card-foot"><span class="price">55 <small>EGP · ج.م</small></span><span class="more"><span lang="en">View</span> · <span lang="ar" dir="rtl">عرض</span></span></div>
+      </div>
+    </article>
+    <article class="card" tabindex="0" data-cat="hot" data-name="flat white فلات وايت" data-title="Flat White" data-title-ar="فلات وايت" data-ingredients="Double ristretto::ريستريتو دابل|Steamed milk::لبن مبخر|Microfoam::ميكروفوم">
+      <div class="card-body">
+        <h3><span class="name-en">Flat White</span></h3>
+        <p class="name-ar" lang="ar" dir="rtl">فلات وايت</p>
+        <p class="desc desc-en">Double ristretto, velvety microfoam.</p>
+        <p class="desc desc-ar" lang="ar" dir="rtl">ريستريتو دابل، فوم ناعم كالحرير.</p>
+        <div class="card-foot"><span class="price">75 <small>EGP · ج.م</small></span><span class="more"><span lang="en">View</span> · <span lang="ar" dir="rtl">عرض</span></span></div>
+      </div>
+    </article>
+    <article class="card" tabindex="0" data-cat="hot" data-name="cappuccino كابتشينو" data-title="Cappuccino" data-title-ar="كابتشينو" data-ingredients="Espresso::إسبريسو|Steamed milk::لبن مبخر|Milk foam::فوم لبن">
+      <div class="card-body">
+        <h3><span class="name-en">Cappuccino</span></h3>
+        <p class="name-ar" lang="ar" dir="rtl">كابتشينو</p>
+        <p class="desc desc-en">Equal parts espresso, steamed milk and foam.</p>
+        <p class="desc desc-ar" lang="ar" dir="rtl">أجزاء متساوية من إسبريسو ولبن مبخر وفوم.</p>
+        <div class="card-foot"><span class="price">70 <small>EGP · ج.م</small></span><span class="more"><span lang="en">View</span> · <span lang="ar" dir="rtl">عرض</span></span></div>
+      </div>
+    </article>
+    <article class="card" tabindex="0" data-cat="hot" data-name="latte لاتيه" data-title="Latte" data-title-ar="لاتيه" data-ingredients="Espresso::إسبريسو|Steamed milk::لبن مبخر|Thin layer of foam::طبقة فوم رقيقة">
+      <div class="card-body">
+        <h3><span class="name-en">Latte</span></h3>
+        <p class="name-ar" lang="ar" dir="rtl">لاتيه</p>
+        <p class="desc desc-en">Smooth and milky with latte art on top.</p>
+        <p class="desc desc-ar" lang="ar" dir="rtl">ناعم وكريمي وعليه رسمة لاتيه آرت.</p>
+        <div class="card-foot"><span class="price">75 <small>EGP · ج.م</small></span><span class="more"><span lang="en">View</span> · <span lang="ar" dir="rtl">عرض</span></span></div>
+      </div>
+    </article>
+    <article class="card" tabindex="0" data-cat="hot" data-name="spanish latte سبانيش لاتيه" data-title="Spanish Latte" data-title-ar="سبانيش لاتيه" data-ingredients="Espresso::إسبريسو|Condensed milk::لبن مكثف|Steamed milk::لبن مبخر">
+      <div class="card-body">
+        <h3><span class="name-en">Spanish Latte</span></h3>
+        <p class="name-ar" lang="ar" dir="rtl">سبانيش لاتيه</p>
+        <p class="desc desc-en">Sweetened with condensed milk, warm and creamy.</p>
+        <p class="desc desc-ar" lang="ar" dir="rtl">محلّى باللبن المكثف، دافي وكريمي.</p>
+        <div class="card-foot"><span class="price">85 <small>EGP · ج.م</small></span><span class="more"><span lang="en">View</span> · <span lang="ar" dir="rtl">عرض</span></span></div>
+      </div>
+    </article>
+    <article class="card" tabindex="0" data-cat="hot" data-name="mocha موكا" data-title="Mocha" data-title-ar="موكا" data-ingredients="Espresso::إسبريسو|Dark chocolate sauce::صوص شوكولاتة داكنة|Steamed milk::لبن مبخر">
+      <div class="card-body">
+        <h3><span class="name-en">Mocha</span></h3>
+        <p class="name-ar" lang="ar" dir="rtl">موكا</p>
+        <p class="desc desc-en">Espresso, dark chocolate sauce and steamed milk.</p>
+        <p class="desc desc-ar" lang="ar" dir="rtl">إسبريسو وصوص شوكولاتة داكنة ولبن مبخر.</p>
+        <div class="card-foot"><span class="price">85 <small>EGP · ج.م</small></span><span class="more"><span lang="en">View</span> · <span lang="ar" dir="rtl">عرض</span></span></div>
+      </div>
+    </article>
+    <article class="card" tabindex="0" data-cat="cold" data-name="caramel cloud latte كراميل كلاود لاتيه" data-title="Caramel Cloud Latte" data-title-ar="كراميل كلاود لاتيه" data-ingredients="Espresso::إسبريسو|Caramel::كراميل|Cold milk::لبن بارد|Cold foam::فوم بارد|Cocoa powder::بودرة كاكاو">
+      <div class="card-body">
+        <h3><span class="name-en">Caramel Cloud Latte</span><span class="tag"><span lang="en">Signature</span> <span lang="ar" dir="rtl">مميز</span></span></h3>
+        <p class="name-ar" lang="ar" dir="rtl">كراميل كلاود لاتيه</p>
+        <p class="desc desc-en">Caramel-streaked milk topped with a cloud of cold foam and a dusting of cocoa.</p>
+        <p class="desc desc-ar" lang="ar" dir="rtl">لبن بخطوط كراميل وفوقه سحابة من الفوم البارد ورشة كاكاو.</p>
+        <div class="card-foot"><span class="price">95 <small>EGP · ج.م</small></span><span class="more"><span lang="en">View</span> · <span lang="ar" dir="rtl">عرض</span></span></div>
+      </div>
+    </article>
+    <article class="card" tabindex="0" data-cat="cold" data-name="affogato shake أفوجاتو شيك" data-title="Affogato Shake" data-title-ar="أفوجاتو شيك" data-ingredients="Coffee::قهوة|Caramel swirl::دوامة كراميل|Vanilla ice cream::آيس كريم فانيليا|Ice::تلج">
+      <div class="card-body">
+        <h3><span class="name-en">Affogato Shake</span><span class="tag"><span lang="en">Signature</span> <span lang="ar" dir="rtl">مميز</span></span></h3>
+        <p class="name-ar" lang="ar" dir="rtl">أفوجاتو شيك</p>
+        <p class="desc desc-en">Blended coffee and caramel swirl, crowned with a scoop of vanilla ice cream.</p>
+        <p class="desc desc-ar" lang="ar" dir="rtl">قهوة مخلوطة ودوامة كراميل، وفوقها سكوب آيس كريم فانيليا.</p>
+        <div class="card-foot"><span class="price">120 <small>EGP · ج.م</small></span><span class="more"><span lang="en">View</span> · <span lang="ar" dir="rtl">عرض</span></span></div>
+      </div>
+    </article>
+    <article class="card" tabindex="0" data-cat="cold" data-name="iced americano آيس أمريكانو" data-title="Iced Americano" data-title-ar="آيس أمريكانو" data-ingredients="Double espresso::إسبريسو دابل|Cold water::ميه باردة|Ice::تلج">
+      <div class="card-body">
+        <h3><span class="name-en">Iced Americano</span></h3>
+        <p class="name-ar" lang="ar" dir="rtl">آيس أمريكانو</p>
+        <p class="desc desc-en">Double espresso over ice and cold water.</p>
+        <p class="desc desc-ar" lang="ar" dir="rtl">إسبريسو دابل على التلج وميه باردة.</p>
+        <div class="card-foot"><span class="price">60 <small>EGP · ج.م</small></span><span class="more"><span lang="en">View</span> · <span lang="ar" dir="rtl">عرض</span></span></div>
+      </div>
+    </article>
+    <article class="card" tabindex="0" data-cat="cold" data-name="iced latte آيس لاتيه" data-title="Iced Latte" data-title-ar="آيس لاتيه" data-ingredients="Espresso::إسبريسو|Cold milk::لبن بارد|Ice::تلج">
+      <div class="card-body">
+        <h3><span class="name-en">Iced Latte</span></h3>
+        <p class="name-ar" lang="ar" dir="rtl">آيس لاتيه</p>
+        <p class="desc desc-en">Espresso poured over cold milk and ice.</p>
+        <p class="desc desc-ar" lang="ar" dir="rtl">إسبريسو متصبب على لبن بارد وتلج.</p>
+        <div class="card-foot"><span class="price">80 <small>EGP · ج.م</small></span><span class="more"><span lang="en">View</span> · <span lang="ar" dir="rtl">عرض</span></span></div>
+      </div>
+    </article>
+    <article class="card" tabindex="0" data-cat="cold" data-name="iced spanish latte آيس سبانيش لاتيه" data-title="Iced Spanish Latte" data-title-ar="آيس سبانيش لاتيه" data-ingredients="Espresso::إسبريسو|Condensed milk::لبن مكثف|Cold milk::لبن بارد|Ice::تلج">
+      <div class="card-body">
+        <h3><span class="name-en">Iced Spanish Latte</span></h3>
+        <p class="name-ar" lang="ar" dir="rtl">آيس سبانيش لاتيه</p>
+        <p class="desc desc-en">Condensed milk sweetness, espresso and ice.</p>
+        <p class="desc desc-ar" lang="ar" dir="rtl">حلاوة اللبن المكثف والإسبريسو والتلج.</p>
+        <div class="card-foot"><span class="price">90 <small>EGP · ج.م</small></span><span class="more"><span lang="en">View</span> · <span lang="ar" dir="rtl">عرض</span></span></div>
+      </div>
+    </article>
+    <article class="card" tabindex="0" data-cat="cold" data-name="cold brew كولد براو" data-title="Cold Brew" data-title-ar="كولد براو" data-ingredients="Cold brew coffee (steeped 18 hours)::قهوة كولد براو (منقوعة 18 ساعة)|Ice::تلج">
+      <div class="card-body">
+        <h3><span class="name-en">Cold Brew</span></h3>
+        <p class="name-ar" lang="ar" dir="rtl">كولد براو</p>
+        <p class="desc desc-en">Steeped for 18 hours, smooth and low in acidity.</p>
+        <p class="desc desc-ar" lang="ar" dir="rtl">متنقع 18 ساعة، ناعم وقليل الحموضة.</p>
+        <div class="card-foot"><span class="price">85 <small>EGP · ج.م</small></span><span class="more"><span lang="en">View</span> · <span lang="ar" dir="rtl">عرض</span></span></div>
+      </div>
+    </article>
+    <article class="card" tabindex="0" data-cat="cold" data-name="coffee frappe كوفي فرابيه" data-title="Coffee Frappe" data-title-ar="كوفي فرابيه" data-ingredients="Coffee::قهوة|Milk::لبن|Caramel::كراميل|Ice::تلج">
+      <div class="card-body">
+        <h3><span class="name-en">Coffee Frappe</span></h3>
+        <p class="name-ar" lang="ar" dir="rtl">كوفي فرابيه</p>
+        <p class="desc desc-en">Blended iced coffee with milk and a layer of caramel.</p>
+        <p class="desc desc-ar" lang="ar" dir="rtl">قهوة مثلجة مخلوطة باللبن وطبقة كراميل.</p>
+        <div class="card-foot"><span class="price">100 <small>EGP · ج.م</small></span><span class="more"><span lang="en">View</span> · <span lang="ar" dir="rtl">عرض</span></span></div>
+      </div>
+    </article>
+    <article class="card" tabindex="0" data-cat="tea" data-name="mint citrus cooler كولر النعناع والحمضيات" data-title="Mint Citrus Cooler" data-title-ar="كولر النعناع والحمضيات" data-ingredients="Passion fruit::باشن فروت|Lemon::ليمون|Fresh mint::نعناع طازج|Ice::تلج">
+      <div class="card-body">
+        <h3><span class="name-en">Mint Citrus Cooler</span><span class="tag"><span lang="en">Signature</span> <span lang="ar" dir="rtl">مميز</span></span></h3>
+        <p class="name-ar" lang="ar" dir="rtl">كولر النعناع والحمضيات</p>
+        <p class="desc desc-en">Passion fruit, lemon and crushed mint over ice. Bright and refreshing.</p>
+        <p class="desc desc-ar" lang="ar" dir="rtl">باشن فروت وليمون ونعناع مهروس على التلج. منعش وفاتح.</p>
+        <div class="card-foot"><span class="price">90 <small>EGP · ج.م</small></span><span class="more"><span lang="en">View</span> · <span lang="ar" dir="rtl">عرض</span></span></div>
+      </div>
+    </article>
+    <article class="card" tabindex="0" data-cat="tea" data-name="hibiscus berry fizz هيبيسكس بيري فيز" data-title="Hibiscus Berry Fizz" data-title-ar="هيبيسكس بيري فيز" data-ingredients="Hibiscus::كركديه|Mixed berries::توت مشكل|Sparkling water::ميه غازية">
+      <div class="card-body">
+        <h3><span class="name-en">Hibiscus Berry Fizz</span></h3>
+        <p class="name-ar" lang="ar" dir="rtl">هيبيسكس بيري فيز</p>
+        <p class="desc desc-en">Hibiscus, mixed berries and sparkling water.</p>
+        <p class="desc desc-ar" lang="ar" dir="rtl">كركديه وتوت مشكل وميه غازية.</p>
+        <div class="card-foot"><span class="price">85 <small>EGP · ج.م</small></span><span class="more"><span lang="en">View</span> · <span lang="ar" dir="rtl">عرض</span></span></div>
+      </div>
+    </article>
+    <article class="card" tabindex="0" data-cat="tea" data-name="virgin mojito فيرجن موهيتو" data-title="Virgin Mojito" data-title-ar="فيرجن موهيتو" data-ingredients="Lime::ليمون أخضر|Fresh mint::نعناع طازج|Soda::صودا|Sugar::سكر">
+      <div class="card-body">
+        <h3><span class="name-en">Virgin Mojito</span></h3>
+        <p class="name-ar" lang="ar" dir="rtl">فيرجن موهيتو</p>
+        <p class="desc desc-en">Lime, mint and soda with a little sugar.</p>
+        <p class="desc desc-ar" lang="ar" dir="rtl">ليمون أخضر ونعناع وصودا وشوية سكر.</p>
+        <div class="card-foot"><span class="price">80 <small>EGP · ج.م</small></span><span class="more"><span lang="en">View</span> · <span lang="ar" dir="rtl">عرض</span></span></div>
+      </div>
+    </article>
+    <article class="card" tabindex="0" data-cat="tea" data-name="iced peach tea آيس بيتش تي" data-title="Iced Peach Tea" data-title-ar="آيس بيتش تي" data-ingredients="Black tea::شاي أسود|Peach syrup::شراب خوخ|Lemon::ليمون|Ice::تلج">
+      <div class="card-body">
+        <h3><span class="name-en">Iced Peach Tea</span></h3>
+        <p class="name-ar" lang="ar" dir="rtl">آيس بيتش تي</p>
+        <p class="desc desc-en">Black tea, peach syrup and lemon.</p>
+        <p class="desc desc-ar" lang="ar" dir="rtl">شاي أسود وشراب خوخ وليمون.</p>
+        <div class="card-foot"><span class="price">70 <small>EGP · ج.م</small></span><span class="more"><span lang="en">View</span> · <span lang="ar" dir="rtl">عرض</span></span></div>
+      </div>
+    </article>
+    <article class="card" tabindex="0" data-cat="tea" data-name="lemon mint lemonade ليمون بالنعناع" data-title="Lemon Mint Lemonade" data-title-ar="ليمون بالنعناع" data-ingredients="Fresh lemon::ليمون طازج|Fresh mint::نعناع طازج|Sugar::سكر|Water::ميه">
+      <div class="card-body">
+        <h3><span class="name-en">Lemon Mint Lemonade</span></h3>
+        <p class="name-ar" lang="ar" dir="rtl">ليمون بالنعناع</p>
+        <p class="desc desc-en">Fresh-squeezed lemon blended with mint.</p>
+        <p class="desc desc-ar" lang="ar" dir="rtl">ليمون طازج معصور مخلوط بالنعناع.</p>
+        <div class="card-foot"><span class="price">65 <small>EGP · ج.م</small></span><span class="more"><span lang="en">View</span> · <span lang="ar" dir="rtl">عرض</span></span></div>
+      </div>
+    </article>
+    <article class="card" tabindex="0" data-cat="tea" data-name="hot tea شاي ساخن" data-title="Hot Tea" data-title-ar="شاي ساخن" data-ingredients="English breakfast, green, chamomile or mint::إنجلش بريكفاست أو أخضر أو بابونج أو نعناع|Hot water::ميه سخنة">
+      <div class="card-body">
+        <h3><span class="name-en">Hot Tea</span></h3>
+        <p class="name-ar" lang="ar" dir="rtl">شاي ساخن</p>
+        <p class="desc desc-en">English breakfast, green, chamomile or mint.</p>
+        <p class="desc desc-ar" lang="ar" dir="rtl">إنجلش بريكفاست، أخضر، بابونج أو نعناع.</p>
+        <div class="card-foot"><span class="price">45 <small>EGP · ج.م</small></span><span class="more"><span lang="en">View</span> · <span lang="ar" dir="rtl">عرض</span></span></div>
+      </div>
+    </article>
+    <article class="card" tabindex="0" data-cat="sweet" data-name="tiramisu تيراميسو" data-title="Tiramisu" data-title-ar="تيراميسو" data-ingredients="Ladyfingers::بسكويت سافوارديي|Espresso::إسبريسو|Mascarpone cream::كريمة ماسكاربوني|Cocoa powder::بودرة كاكاو">
+      <div class="card-body">
+        <h3><span class="name-en">Tiramisu</span><span class="tag"><span lang="en">Signature</span> <span lang="ar" dir="rtl">مميز</span></span></h3>
+        <p class="name-ar" lang="ar" dir="rtl">تيراميسو</p>
+        <p class="desc desc-en">Coffee-soaked ladyfingers, mascarpone cream and a cocoa-dusted top.</p>
+        <p class="desc desc-ar" lang="ar" dir="rtl">بسكويت سافوارديي منقوع في القهوة وكريمة ماسكاربوني ورشة كاكاو فوق.</p>
+        <div class="card-foot"><span class="price">110 <small>EGP · ج.م</small></span><span class="more"><span lang="en">View</span> · <span lang="ar" dir="rtl">عرض</span></span></div>
+      </div>
+    </article>
+    <article class="card" tabindex="0" data-cat="sweet" data-name="berry brûlée cruffin بيري بريولية كروفن" data-title="Berry Brûlée Cruffin" data-title-ar="بيري بريولية كروفن" data-ingredients="Laminated croissant dough::عجينة كرواسون|Caramelized sugar::سكر مكرمل|Mixed berry glaze::صوص توت مشكل|Butter::زبدة">
+      <div class="card-body">
+        <h3><span class="name-en">Berry Brûlée Cruffin</span><span class="tag"><span lang="en">Signature</span> <span lang="ar" dir="rtl">مميز</span></span></h3>
+        <p class="name-ar" lang="ar" dir="rtl">بيري بريولية كروفن</p>
+        <p class="desc desc-en">Flaky croissant-muffin hybrid with a caramelized top and warm berry glaze.</p>
+        <p class="desc desc-ar" lang="ar" dir="rtl">هجين بين الكرواسون والمافن، مقرمش بطبقة كراميل وصوص توت دافي.</p>
+        <div class="card-foot"><span class="price">95 <small>EGP · ج.م</small></span><span class="more"><span lang="en">View</span> · <span lang="ar" dir="rtl">عرض</span></span></div>
+      </div>
+    </article>
+    <article class="card" tabindex="0" data-cat="sweet" data-name="butter croissant كرواسون بالزبدة" data-title="Butter Croissant" data-title-ar="كرواسون بالزبدة" data-ingredients="Flour::دقيق|Butter::زبدة|Milk::لبن|Yeast::خميرة|Salt::ملح">
+      <div class="card-body">
+        <h3><span class="name-en">Butter Croissant</span></h3>
+        <p class="name-ar" lang="ar" dir="rtl">كرواسون بالزبدة</p>
+        <p class="desc desc-en">Golden, flaky and buttery.</p>
+        <p class="desc desc-ar" lang="ar" dir="rtl">ذهبي ومقرمش وبالزبدة.</p>
+        <div class="card-foot"><span class="price">55 <small>EGP · ج.م</small></span><span class="more"><span lang="en">View</span> · <span lang="ar" dir="rtl">عرض</span></span></div>
+      </div>
+    </article>
+    <article class="card" tabindex="0" data-cat="sweet" data-name="basque cheesecake تشيز كيك باسكي" data-title="Basque Cheesecake" data-title-ar="تشيز كيك باسكي" data-ingredients="Cream cheese::جبنة كريمة|Eggs::بيض|Cream::كريمة|Sugar::سكر">
+      <div class="card-body">
+        <h3><span class="name-en">Basque Cheesecake</span></h3>
+        <p class="name-ar" lang="ar" dir="rtl">تشيز كيك باسكي</p>
+        <p class="desc desc-en">Creamy center with a burnished top.</p>
+        <p class="desc desc-ar" lang="ar" dir="rtl">قلب كريمي وطبقة علوية محروقة شوية.</p>
+        <div class="card-foot"><span class="price">100 <small>EGP · ج.م</small></span><span class="more"><span lang="en">View</span> · <span lang="ar" dir="rtl">عرض</span></span></div>
+      </div>
+    </article>
+    <article class="card" tabindex="0" data-cat="sweet" data-name="fudge brownie فادج براوني" data-title="Fudge Brownie" data-title-ar="فادج براوني" data-ingredients="Dark chocolate::شوكولاتة داكنة|Butter::زبدة|Eggs::بيض|Sugar::سكر|Walnuts::جوز">
+      <div class="card-body">
+        <h3><span class="name-en">Fudge Brownie</span></h3>
+        <p class="name-ar" lang="ar" dir="rtl">فادج براوني</p>
+        <p class="desc desc-en">Dense, gooey chocolate with walnuts.</p>
+        <p class="desc desc-ar" lang="ar" dir="rtl">شوكولاتة كثيفة ولزجة مع الجوز.</p>
+        <div class="card-foot"><span class="price">70 <small>EGP · ج.م</small></span><span class="more"><span lang="en">View</span> · <span lang="ar" dir="rtl">عرض</span></span></div>
+      </div>
+    </article>
+    <article class="card" tabindex="0" data-cat="sweet" data-name="chocolate chip cookie كوكيز بقطع الشوكولاتة" data-title="Chocolate Chip Cookie" data-title-ar="كوكيز بقطع الشوكولاتة" data-ingredients="Butter::زبدة|Flour::دقيق|Brown sugar::سكر بني|Chocolate chips::قطع شوكولاتة">
+      <div class="card-body">
+        <h3><span class="name-en">Chocolate Chip Cookie</span></h3>
+        <p class="name-ar" lang="ar" dir="rtl">كوكيز بقطع الشوكولاتة</p>
+        <p class="desc desc-en">Crisp edges, soft middle, served warm.</p>
+        <p class="desc desc-ar" lang="ar" dir="rtl">أطراف مقرمشة ووسط طري، بيتقدم دافي.</p>
+        <div class="card-foot"><span class="price">45 <small>EGP · ج.م</small></span><span class="more"><span lang="en">View</span> · <span lang="ar" dir="rtl">عرض</span></span></div>
+      </div>
+    </article>
+    <article class="card" tabindex="0" data-cat="bites" data-name="egg &amp; cheese croissant كرواسون بيض وجبنة" data-title="Egg &amp; Cheese Croissant" data-title-ar="كرواسون بيض وجبنة" data-ingredients="Butter croissant::كرواسون بالزبدة|Scrambled eggs::بيض مخفوق|Cheddar::شيدر">
+      <div class="card-body">
+        <h3><span class="name-en">Egg & Cheese Croissant</span></h3>
+        <p class="name-ar" lang="ar" dir="rtl">كرواسون بيض وجبنة</p>
+        <p class="desc desc-en">Scrambled egg and melted cheddar in a warm croissant.</p>
+        <p class="desc desc-ar" lang="ar" dir="rtl">بيض مخفوق وجبنة شيدر ذايبة في كرواسون دافي.</p>
+        <div class="card-foot"><span class="price">85 <small>EGP · ج.م</small></span><span class="more"><span lang="en">View</span> · <span lang="ar" dir="rtl">عرض</span></span></div>
+      </div>
+    </article>
+    <article class="card" tabindex="0" data-cat="bites" data-name="avocado toast أفوكادو توست" data-title="Avocado Toast" data-title-ar="أفوكادو توست" data-ingredients="Sourdough::خبز مخمر|Smashed avocado::أفوكادو مهروس|Cherry tomato::طماطم شيري|Poached egg::بيضة بوتشيد">
+      <div class="card-body">
+        <h3><span class="name-en">Avocado Toast</span></h3>
+        <p class="name-ar" lang="ar" dir="rtl">أفوكادو توست</p>
+        <p class="desc desc-en">Sourdough, smashed avocado, cherry tomato and a poached egg.</p>
+        <p class="desc desc-ar" lang="ar" dir="rtl">خبز مخمر، أفوكادو مهروس، طماطم شيري وبيضة بوتشيد.</p>
+        <div class="card-foot"><span class="price">120 <small>EGP · ج.م</small></span><span class="more"><span lang="en">View</span> · <span lang="ar" dir="rtl">عرض</span></span></div>
+      </div>
+    </article>
+    <article class="card" tabindex="0" data-cat="bites" data-name="halloumi sandwich ساندوتش حلومي" data-title="Halloumi Sandwich" data-title-ar="ساندوتش حلومي" data-ingredients="Grilled halloumi::حلومي مشوي|Tomato::طماطم|Rocket::جرجير|Pesto::بيستو">
+      <div class="card-body">
+        <h3><span class="name-en">Halloumi Sandwich</span></h3>
+        <p class="name-ar" lang="ar" dir="rtl">ساندوتش حلومي</p>
+        <p class="desc desc-en">Grilled halloumi, tomato, rocket and pesto.</p>
+        <p class="desc desc-ar" lang="ar" dir="rtl">حلومي مشوي وطماطم وجرجير وبيستو.</p>
+        <div class="card-foot"><span class="price">105 <small>EGP · ج.م</small></span><span class="more"><span lang="en">View</span> · <span lang="ar" dir="rtl">عرض</span></span></div>
+      </div>
+    </article>
+    <article class="card" tabindex="0" data-cat="bites" data-name="chicken pesto panini بانيني فراخ بيستو" data-title="Chicken Pesto Panini" data-title-ar="بانيني فراخ بيستو" data-ingredients="Grilled chicken::فراخ مشوية|Basil pesto::بيستو ريحان|Mozzarella::موتزاريلا|Bread::عيش">
+      <div class="card-body">
+        <h3><span class="name-en">Chicken Pesto Panini</span></h3>
+        <p class="name-ar" lang="ar" dir="rtl">بانيني فراخ بيستو</p>
+        <p class="desc desc-en">Grilled chicken, basil pesto and mozzarella.</p>
+        <p class="desc desc-ar" lang="ar" dir="rtl">فراخ مشوية وبيستو ريحان وموتزاريلا.</p>
+        <div class="card-foot"><span class="price">130 <small>EGP · ج.م</small></span><span class="more"><span lang="en">View</span> · <span lang="ar" dir="rtl">عرض</span></span></div>
+      </div>
+    </article>
+    <article class="card" tabindex="0" data-cat="bites" data-name="turkey &amp; cheese toastie توست ديك رومي وجبنة" data-title="Turkey &amp; Cheese Toastie" data-title-ar="توست ديك رومي وجبنة" data-ingredients="Smoked turkey::ديك رومي مدخن|Cheese::جبنة|Bread::عيش">
+      <div class="card-body">
+        <h3><span class="name-en">Turkey & Cheese Toastie</span></h3>
+        <p class="name-ar" lang="ar" dir="rtl">توست ديك رومي وجبنة</p>
+        <p class="desc desc-en">Smoked turkey and cheese, pressed until golden.</p>
+        <p class="desc desc-ar" lang="ar" dir="rtl">ديك رومي مدخن وجبنة، مضغوط لحد ما يبقى ذهبي.</p>
+        <div class="card-foot"><span class="price">100 <small>EGP · ج.م</small></span><span class="more"><span lang="en">View</span> · <span lang="ar" dir="rtl">عرض</span></span></div>
+      </div>
+    </article>
+    <article class="card" tabindex="0" data-cat="bites" data-name="yogurt &amp; granola bowl بول زبادي وجرانولا" data-title="Yogurt &amp; Granola Bowl" data-title-ar="بول زبادي وجرانولا" data-ingredients="Greek yogurt::زبادي يوناني|Granola::جرانولا|Honey::عسل|Seasonal fruit::فاكهة موسمية">
+      <div class="card-body">
+        <h3><span class="name-en">Yogurt & Granola Bowl</span></h3>
+        <p class="name-ar" lang="ar" dir="rtl">بول زبادي وجرانولا</p>
+        <p class="desc desc-en">Greek yogurt, crunchy granola, honey and seasonal fruit.</p>
+        <p class="desc desc-ar" lang="ar" dir="rtl">زبادي يوناني وجرانولا مقرمشة وعسل وفاكهة موسمية.</p>
+        <div class="card-foot"><span class="price">90 <small>EGP · ج.م</small></span><span class="more"><span lang="en">View</span> · <span lang="ar" dir="rtl">عرض</span></span></div>
+      </div>
+    </article>
+      </div>
+
+      <p class="m-empty" id="empty" hidden><span lang="en">No results</span> · <span lang="ar" dir="rtl">مفيش نتائج</span></p>
+      <p class="m-note"><span lang="en">Prices in EGP. Prices and availability may change; confirm when ordering.</span> <span lang="ar" dir="rtl">الأسعار بالجنيه المصري وممكن تتغير، برجاء التأكيد عند الطلب.</span></p>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <img class="footer__mascot" src="images/mascot-logo.png" width="603" height="517" alt="" loading="lazy">
+    <p class="footer__tagline">Sip. Smile. Repeat.</p>
+    <div class="beans" aria-hidden="true"></div>
+    <p class="footer__note">Please tell us about any allergies before you order.</p>
+  </footer>
+
+  <!-- ============ LIGHTBOX ============ -->
+  <dialog class="lightbox" id="lightbox" aria-labelledby="lbTitle" aria-describedby="lbDesc">
+    <div class="lightbox__panel">
+      <button class="lightbox__close" id="lbClose" type="button" aria-label="Close · إغلاق">
+        <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false">
+          <path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" fill="none"/>
+        </svg>
+      </button>
+
+      <div class="lightbox__body">
+        <span class="lightbox__tag" id="lbTag"><span lang="en">Signature</span> · <span lang="ar" dir="rtl">مميز</span></span>
+        <h2 class="lightbox__title" id="lbTitle"></h2>
+        <p class="lightbox__title-ar" id="lbTitleAr" lang="ar" dir="rtl"></p>
+        <p class="lightbox__price"><span id="lbPrice"></span> <span class="lightbox__cur">EGP · ج.م</span></p>
+        <p class="lightbox__desc" id="lbDesc"></p>
+        <p class="lightbox__desc lightbox__desc-ar" id="lbDescAr" lang="ar" dir="rtl"></p>
+
+        <section class="lightbox__ing" id="lbIng" aria-label="Ingredients · المكونات">
+          <h3 class="lightbox__label"><span lang="en">Ingredients</span> · <span lang="ar" dir="rtl">المكونات</span></h3>
+          <ul class="lightbox__list" id="lbList"></ul>
+        </section>
+      </div>
+    </div>
+  </dialog>
+
+  <script src="script.js"></script>
+</body>
+</html>
